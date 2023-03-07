@@ -2,6 +2,7 @@ import React from "react"
 import { ChatBubbleLeftRightIcon, PhoneIcon } from "@heroicons/react/24/solid"
 
 const CustomerHeader = ({ chat }) => {
+    
 
     return (
         <div className="chat-header">
@@ -11,7 +12,10 @@ const CustomerHeader = ({ chat }) => {
             </div>
             <div className="flexbetween">
                 <PhoneIcon className="icon-phone" /> 
-                <p className="header-text">{chat.description}</p>
+                {chat.description !== "Loading..." ?
+                    (<p className="header-text">{chat.description}</p>) :
+                    (<p className="header-text">no chat selected</p>)
+                }
             </div>
         </div>
     )
