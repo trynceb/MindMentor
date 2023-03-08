@@ -1,20 +1,24 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+import os
+import openai
+import logging
+from dotenv import load_dotenv
+from routes.auth import router as auth_router
 
-from pydantic import BaseModel
 
+# CONFIGURATIONS
+load_dotenv()
 app = FastAPI()
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_methods=['*'], allow_headers=['*'])
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-class User(BaseModel):
-    username: str
-    
-@app.get('/')
-async def authenticate():
-    return {"this":"this"}
+# ROUTES
+
+app.include_router(auth_router, prefix='/auth')
+
+# SERVER SETUP
+if __name__ == '__main__':
+    logging.basicConfig(filename='error.log', level=logging.DEBUG)
+    uvicorn.run(app, host='0.0.0.0', port=int(os.environ.get('PORT', 9000)))
