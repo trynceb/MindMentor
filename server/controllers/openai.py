@@ -1,7 +1,7 @@
 import os
+import openai
 from fastapi import HTTPException
 from httpx import AsyncClient
-from openai import openai
 from typing import Any, Dict
 from dotenv import load_dotenv
 from models.openai import TextRequest, CodeRequest, AssistRequest
