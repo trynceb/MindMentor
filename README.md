@@ -4,3 +4,4 @@
 - SCSS
 - chatengine.io
 - FastAPI
+- heroicons
