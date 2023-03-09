@@ -14,4 +14,4 @@ async def post_code(request: CodeRequest):
 
 router.post("/assist", response_model=dict)
 async def post_assist(request: AssistRequest):
-    return await assist(reque)
+    return await assist(request)
