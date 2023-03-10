@@ -12,9 +12,9 @@ export const api = createApi({
         body: payload,
       }),
     }),
-    postAiCode: build.mutation({
+    postAiCoach: build.mutation({
       query: (payload) => ({
-        url: "openai/code",
+        url: "openai/coach",
         method: "POST",
         body: payload,
       }),
@@ -45,7 +45,7 @@ export const api = createApi({
 
 export const {
   usePostAiTextMutation,
-  usePostAiCodeMutation,
+  usePostAiCoachMutation,
   usePostAiAssistMutation,
   usePostLoginMutation,
   usePostSignUpMutation,
