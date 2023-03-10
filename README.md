@@ -1,4 +1,4 @@
-# Mind Mentor Chat App
+# Mind Mentor - Chat App
 The Mind Mentor Chat App is a web application designed to help users get motivated and stay on track with their goals. The app uses a chat interface to communicate with an AI-powered motivational coach, which is built using the OpenAI API GPT-3.5.
 
 ## Features
