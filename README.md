@@ -1,7 +1,10 @@
 #Tech
 - Vite
 - React
+- Redux Toolkit
+- Express
+- Node.js
 - SCSS
 - chatengine.io
-- FastAPI
 - heroicons
+- openai api gpt-3.5
