@@ -85,6 +85,21 @@ const sendMessage = async (message, chatId) => {
         "User-Name": process.env.BOT_USER_JANE,
         "User-Secret": process.env.BOT_JANE_SECRET,
       },
+        headers: {
+          "Project-ID": process.env.PROJECT_ID,
+          "User-Name": process.env.BOT_USER_MAX,
+          "User-Secret": process.env.BOT_MAX_SECRET,
+      },
+        headers: {
+          "Project-ID": process.env.PROJECT_ID,
+          "User-Name": process.env.BOT_USER_DRE,
+          "User-Secret": process.env.BOT_DRE_SECRET,
+      },
+        headers: {
+          "Project-ID": process.env.PROJECT_ID,
+          "User-Name": process.env.BOT_USER_DAN,
+          "User-Secret": process.env.BOT_DAN_SECRET,
+      },
     }
   );
 };
