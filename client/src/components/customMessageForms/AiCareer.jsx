@@ -1,11 +1,11 @@
-import { usePostAiTextMutation } from "@/state/api";
+import { usePostAiCareerMutation } from "@/state/api";
 import React, { useState } from "react";
 import MessageFormUI from "./MessageFormUI";
 
-const Ai = ({ props, activeChat }) => {
+const AiCareer = ({ props, activeChat }) => {
   const [message, setMessage] = useState("");
   const [attachment, setAttachment] = useState("");
-  const [trigger] = usePostAiTextMutation();
+  const [triggerCareer] = usePostAiCareerMutation();
 
   const handleChange = (e) => setMessage(e.target.value);
 
@@ -24,7 +24,7 @@ const Ai = ({ props, activeChat }) => {
     };
 
     props.onSubmit(form);
-    trigger(form);
+    triggerCareer(form);
     setMessage("");
     setAttachment("");
   };
@@ -39,4 +39,4 @@ const Ai = ({ props, activeChat }) => {
   );
 };
 
-export default Ai;
+export default AiCareer;

@@ -6,9 +6,9 @@ import {
 } from "react-chat-engine-advanced";
 import Header from "@/components/customHeader";
 import StandardMessageForm from "@/components/customMessageForms/StandardMessageForm";
-import Ai from "@/components/customMessageForms/Ai";
-import AiCoach from "@/components/customMessageForms/AiCoach";
-import AiAssist from "@/components/customMessageForms/AiAssist";
+import AiCareer from "@/components/customMessageForms/AiCareer";
+import AiMotivate from "@/components/customMessageForms/AiMotivate";
+import AiNutrition from "@/components/customMessageForms/AiNutrition";
 
 const Chat = ({ user, secret }) => {
   const chatProps = useMultiChatLogic(
@@ -25,14 +25,14 @@ const Chat = ({ user, secret }) => {
         style={{ height: "100vh" }}
         renderChatHeader={(chat) => <Header chat={chat} />}
         renderMessageForm={(props) => {
-          if (chatProps.chat?.title.startsWith("AiChat_")) {
-            return <Ai props={props} activeChat={chatProps.chat} />;
+          if (chatProps.chat?.title.startsWith("Career-AI")) {
+            return <AiCareer props={props} activeChat={chatProps.chat} />;
           }
-          if (chatProps.chat?.title.startsWith("AiCoach_")) {
-            return <AiCoach props={props} activeChat={chatProps.chat} />;
+          if (chatProps.chat?.title.startsWith("Motivate-AI")) {
+            return <AiMotivate props={props} activeChat={chatProps.chat} />;
           }
-          if (chatProps.chat?.title.startsWith("AiAssist_")) {
-            return <AiAssist props={props} activeChat={chatProps.chat} />;
+          if (chatProps.chat?.title.startsWith("Nutrition-AI")) {
+            return <AiNutrition props={props} activeChat={chatProps.chat} />;
           }
 
           return (

@@ -1,11 +1,11 @@
-import { usePostAiCoachMutation } from "@/state/api";
+import { usePostAiMotivateMutation } from "@/state/api";
 import React, { useState } from "react";
 import MessageFormUI from "./MessageFormUI";
 
-const AiCoach = ({ props, activeChat }) => {
+const AiMotivate = ({ props, activeChat }) => {
   const [message, setMessage] = useState("");
   const [attachment, setAttachment] = useState("");
-  const [triggerCoach] = usePostAiCoachMutation();
+  const [triggerMotivate] = usePostAiMotivateMutation();
 
   const handleChange = (e) => setMessage(e.target.value);
 
@@ -24,7 +24,7 @@ const AiCoach = ({ props, activeChat }) => {
     };
 
     props.onSubmit(form);
-    triggerCoach(form);
+    triggerMotivate(form);
     setMessage("");
     setAttachment("");
   };
@@ -39,4 +39,4 @@ const AiCoach = ({ props, activeChat }) => {
   );
 };
 
-export default AiCoach;
+export default AiMotivate;

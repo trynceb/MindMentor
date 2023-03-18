@@ -1,10 +1,10 @@
 import express from "express";
-import {text, coach, assist} from "../controllers/openai.js";
+import {career, motivate, nutrition} from "../controllers/openai.js";
 
 const router = express.Router();
 
-router.post("/text", text);
-router.post("/coach", coach);
-router.post("/assist", assist);
+router.post("/career", career);
+router.post("/motivate", motivate);
+router.post("/nutrition", nutrition);
 
 export default router;

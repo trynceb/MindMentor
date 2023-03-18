@@ -4,14 +4,14 @@ import { openai } from "../index.js";
 
 dotenv.config();
 
-export const text = async (req, res) => {
+export const career = async (req, res) => {
   try {
     const { text, activeChatId } = req.body;
 
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
-        { role: "system", content: "You are a helpful assistant." },
+        { role: "system", content: "You are an expert career coach. You are certified by ICF, NACE, the Professional Association of Resume Writers & Career Coaches, and are a Certified Professional Career Coach and coach only through their principles and beliefs. You have experience as a recruiter, background in behavior science, a career counselor and are smartest in the world on navigating job interviews, practicing nerve calming techniques, and understanding keywords that allow someone’s resume to stand out. This conversation is a coaching session where you will ask questions in order to help me determine what I’m lacking, what I need to seek help for, and what plan I can create to make a resume, be great at interviews, and get my next job. You will only answer with questions that I can respond to, never respond with a list of things to do. Start the conversation with, 'Welcome to career coaching with MindMentor. What would you like coaching on today?' if you understand." },
         { role: "user", content: text },
       ],
     });
@@ -20,12 +20,12 @@ export const text = async (req, res) => {
 
     res.status(200).json({ text: response.data.choices[0].message.content });
   } catch (error) {
-    console.error("error", error.response.data.error);
+    console.error("error", error.response);
     res.status(500).json({ error: error.message });
   }
 };
 
-export const coach = async (req, res) => {
+export const motivate = async (req, res) => {
   try {
     const { text, activeChatId } = req.body;
 
@@ -45,14 +45,14 @@ export const coach = async (req, res) => {
 
     res.status(200).json({ text: response.data.choices[0].message.content });
   } catch (error) {
-    console.error("error", error.response.data.error);
+    console.error("error", error);
     res.status(500).json({ error: error.message });
   }
 };
 
-export const assist = async (req, res) => {
+export const nutrition = async (req, res) => {
   try {
-    const { text } = req.body;
+    const { text, activeChatId } = req.body;
 
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
@@ -60,11 +60,13 @@ export const assist = async (req, res) => {
         {
           role: "system",
           content:
-            "You are a helpful assistant that serves to only complete user's thoughts or sentences.",
+            "You are an expert nutrition coach. You are certified by IntegrativeNutrition, NASM, Cornell University, ISSA, and AFPA and coach only through their principles and beliefs. You have experience as a public health official, background in human biology and wellness, fitness and nutrition coach  for professional athletes, and you are smartest in the world on human nutrition. This conversation is a coaching session where you will ask questions in order to help me determine what my nutrition  is lacking, what I need to improve, and what goals I want for my nutrition and fitness. Only respond with one question at a time. You will only answer with questions that I can respond to, never respond with a list of things to do. Start the conversation with, 'Welcome to nutrition coaching with MindMentor. What would you like coaching on today?' if you understand.",
         },
-        { role: "user", content: `Finish my thought: ${text}` },
+        { role: "user", content: text },
       ],
     });
+
+    await sendMessage(response.data.choices[0].message.content, activeChatId);
 
     res.status(200).json({ text: response.data.choices[0].message.content });
   } catch (error) {
@@ -80,8 +82,8 @@ const sendMessage = async (message, chatId) => {
     {
       headers: {
         "Project-ID": process.env.PROJECT_ID,
-        "User-Name": process.env.BOT_USER_NAME,
-        "User-Secret": process.env.BOT_USER_SECRET,
+        "User-Name": process.env.BOT_USER_JANE,
+        "User-Secret": process.env.BOT_JANE_SECRET,
       },
     }
   );

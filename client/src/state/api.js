@@ -5,23 +5,23 @@ export const api = createApi({
   reducerPath: "main",
   tagTypes: [],
   endpoints: (build) => ({
-    postAiText: build.mutation({
+    postAiCareer: build.mutation({
       query: (payload) => ({
-        url: "openai/text",
+        url: "openai/career",
         method: "POST",
         body: payload,
       }),
     }),
-    postAiCoach: build.mutation({
+    postAiMotivate: build.mutation({
       query: (payload) => ({
-        url: "openai/coach",
+        url: "openai/motivate",
         method: "POST",
         body: payload,
       }),
     }),
-    postAiAssist: build.mutation({
+    postAiNutrition: build.mutation({
       query: (payload) => ({
-        url: "openai/assist",
+        url: "openai/nutrition",
         method: "POST",
         body: payload,
       }),
@@ -44,9 +44,9 @@ export const api = createApi({
 });
 
 export const {
-  usePostAiTextMutation,
-  usePostAiCoachMutation,
-  usePostAiAssistMutation,
+  usePostAiCareerMutation,
+  usePostAiMotivateMutation,
+  usePostAiNutritionMutation,
   usePostLoginMutation,
   usePostSignUpMutation,
 } = api;
