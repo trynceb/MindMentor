@@ -3,6 +3,27 @@ The Mind Mentor Chat App is a web application designed to help users get motivat
 
 ## Getting Started
 
+Clone the Repo:
+- Open a command prompt or terminal window on your computer.
+- Navigate to the directory where you want to clone the repository. You can use the cd command to change directories.
+- Go to the repository on GitHub.
+- Click on the "Code" button and then click on the "HTTPS" option to copy the repository URL.
+- In the command prompt or terminal window, type git clone, and then paste the repository URL you copied in step 4. It should look something like this: "git clone https://github.com/username/repository-name.git"
+- Press Enter to start the cloning process. Git will download all of the files from the repository and create a local copy on your computer.
+
+Install Node.js and npm if you haven't already.
+
+Server:
+- Navigate to the server directory in the terminal using the "cd server" command.
+- Run "npm install" to install the dependencies listed in the package.json file.
+- Create a .env file in the root directory of the server folder with the required environment variables.
+- Run the server using the "npm run dev" command in the terminal.
+
+Client:
+Navigate to the client directory in the terminal/command prompt.
+Run npm install to install the dependencies listed in the package.json file.
+Run the client using the npm run dev command.
+Note that the client and server are separate projects and should be run independently. Also, make sure to provide any additional instructions or requirements (such as environment variables) that are specific to your project.
 
 ## Screenshots
 [![HXaJNLP.md.png](https://iili.io/HXaJNLP.md.png)](https://freeimage.host/i/HXaJNLP)
