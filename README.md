@@ -20,10 +20,21 @@ Server:
 - Run the server using the "npm run dev" command in the terminal.
 
 Client:
-Navigate to the client directory in the terminal/command prompt.
-Run npm install to install the dependencies listed in the package.json file.
-Run the client using the npm run dev command.
-Note that the client and server are separate projects and should be run independently. Also, make sure to provide any additional instructions or requirements (such as environment variables) that are specific to your project.
+- Navigate to the client directory in the terminal/command prompt.
+- Run npm install to install the dependencies listed in the package.json file.
+- Run the client using the "npm run dev" command.
+- Create a .env.local file in the root directory of the client folder with the required environment variables.
+
+Go to http://localhost:1337 to start using the app.
+
+Starting a Chat:
+- Register, then login.
+- Add a chat in the My Chats section and start the name with one of the following:
+    - Career-AI
+    - Nutrition-AI
+    - Motivation-AI
+- Go to the members section and add an AI charater.
+- Begin you session!
 
 ## Screenshots
 [![HXaJNLP.md.png](https://iili.io/HXaJNLP.md.png)](https://freeimage.host/i/HXaJNLP)
