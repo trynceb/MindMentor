@@ -29,7 +29,7 @@ Go to http://localhost:1337 to start using the app.
 
 Starting a Chat:
 - Register, then login.
-- Add a chat in the My Chats section and start the name with one of the following:
+- Add a chat in the My Chats section and name the chat with one of the following:
     - Career-AI
     - Nutrition-AI
     - Motivation-AI
