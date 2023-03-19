@@ -1,9 +1,30 @@
 {
     "version": 2,
     "builds": [
-      { "src": "*.js", "use": "@vercel/node" }
+      { "src": "*.js", "use": "@vercel/node" },
+      {
+        "src": "src/index.html",
+        "use": "@vercel/static-build",
+        "config": {
+          "publicPages": true
+        }
+      }
     ],
-        "routes": [
-          { "src": "/(.*)", "dest": "/" }
+    "routes": [
+      { "src": "/(.*)", "dest": "/" }
+    ],
+    "functions": {
+      "api/**": {
+        "runtime": "@vercel/node",
+        "memory": 1024
+      }
+    },
+      "plugins": [],
+      "optimizeDeps": {
+        "include": [
+          "express"
         ]
+      }
 }
+  
+  
