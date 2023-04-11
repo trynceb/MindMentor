@@ -33,5 +33,5 @@ app.use("/auth", authRoutes);
 /* SERVER SETUP */
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
+  console.log(`Listening at http://localhost:${PORT}`);
 });
